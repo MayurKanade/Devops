@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/home/Devops.css">
+    <title>OSI Model</title>
+</head>
+<body>
+    <h1>OSI (Open System Interconnection Model)</h1>
+    <br>
+    This model describe how data is transfer through one computer to another computer in a computer network.
+    <br>
+    <ul>
+        <li>This modele was established by ISO (International Organization of Standradization) in 1984. Containing following modules:</li> <br>
+        <li>Application Layer</li> <br>
+        <li>Presentation Layer</li> <br>
+        <li>Session Layer</li> <br>
+        <li>Transport Layer</li> <br>
+        <li>Network Layer</li> <br>
+        <li>Data Link Layer</li> <br>
+        <li>Physical Layer</li> <br>
+        <li>Note: Each layer is packet of protocols.</li> <br>
+    </ul>
+    <ol>
+        <h1>Application Layer:</h1>
+        <li>Application layer is used by network applications (i.e computer applications use Internet.) like Google Chrome,Opera,Firefox,Skype,Gmail etc.</li> <br>
+        <li>Web browser does not reside inside the application layer but it uses application layer protocols like HTTP or HTTPs.</li> <br>
+        <li>There are dozens of application layer protocols that enable various functions at this layer.</li> <br>
+        <li>This protocols forms the various network services. like <br> File transfer (FTP protocol) <br>web Surfing. (HTTPS/HTTPs) <br>Emails. (SMTP or POP) <br> Virtual Terminals. (Telnet) etc.</li> <br>
+        <li>Application layer provides services for network applications with help of protocols to perform user activities.</li> <br>        
+    </ol>
+    <ol>
+        <h1>Presentation Layer:</h1>
+        <li>It receives data from Application layer.</li> <br>
+        <li>This data is in the form of characters and numbers. <br> Presentation layer converts this data into machine understandable format (i.e in binary format 0's and 1's)</li> <br>
+        <li>This functionality is called translation.</li> <br>
+        <li>Before the data is transmitted Presentation layer redueces the number of bits that are used to represent the original data. <br> This bit reduction process is called as Data Compression. and <br> it can be lossy or lossless.</li> <br>
+        <li>As the file size is redueced it will take less time to reach the destination. (i.e data transmission can be done faster).</li> <br>
+        <li>It can be very useful in Video and Audio Streaming.</li> <br>
+        <li>To maintain the integrity of the data. The data is encrypted.</li> <br>
+        <li>Encryption enhances the security of the data.</li> <br>
+        <li>Sender side the data is encrypted and at receiver side the data is decrypted.</li> <br>
+        <li>SSL protocol or Secured Socker Layer protocol is used in Presentation layer for encryption and decryption.</li> <br>
+        <li>Presentation Layer performs main 3 functions as follows:
+            <ol>
+                <li>Translation.</li> <br>
+                <li>Data Compression</li> <br>
+                <li>Encryption/Decryption.</li> <br>
+            </ol>            
+        </li> <br>
+    </ol>
+    <ol>
+        <h1>Session Layer:</h1>
+        <li>Session layer helps setting up and managing connections enabling sending and receiving of data followed by terminating connections or sessions.</li> <br>
+        <li>It takes the help from some helpers like 
+            <ol>
+                <li>APIs</li> <br>
+                <li>NETBIOS</li> <br>
+            </ol>            
+        </li> <br>
+        <li>Just before a connection establish with server. Server performs functions like <br> Authentication: Authentication is a process which defines, who the client is? or who you are? for this server uses a Username and Password.
+         <br> After connection has been established the Authorization is checked. Authorization is a process used by server to determine if you have a permission to access a file, if not you'll get a message you're not authorized to display this page.
+        </li> <br>
+        <li>Session layer keeps the track of files that are been downloaded. These files are send in the form of datapackets.</li> <br>
+        <li>Session layer keeps a track which data packet belongs to which file.</li> <br>
+        <li>Also tracks where the data packets go. <br> Session layer helps in Session Management, Authentication and Authorization.</li> <br>
+        <li>Your web browser performs all the above 3 functionalities i.e Application,Presentation and Session layer.</li> <br>
+    </ol>
+    <ol>
+        <h1>Transport Layer:</h1>
+        <ol>
+            <li>Transport layer controls the reliablity of communication through:</li> <br>
+            <ol>
+                <li>Segmentation</li> <br>
+                <li>Flow Control</li> <br>
+                <li>Error Control</li> <br>
+            </ol>
+            <ol>
+            <li>In Segmentation: Data received from Session layer is divided into small data unit called segments.</li> <br>        
+            <li>Each segment contains a source and destination's port number and a Sequence Number.</li> <br>
+            <li>Port number helps to direct each segment to the correct application and sequence number reassembles the segments in the correct order to form a correct message at the receiver.</li> <br>
+            </ol>
+            <ol>
+                <li>In Flow Control: Amount of data being transmitted is controlled by Transport Layer.</li> <br>
+                <li>for e.g. if the data is transferred by the server is 100 Mbps and Mobile phone receiving capacirty is 10 Mbps then Mobile sends a message to the server to send the data in 10 Mbps speed to avoid the loss of packets.
+                    <br> Also if the data is transferred by the server at low speed rate like 5 Mbps then Mobile send a message to the server to send a files at 10 Mbps speed. <br>
+                    this is nothig but the data speed control.
+                </li> <br>
+            </ol>
+            <ol>
+                <li>In Error Control: If some data doesn't arrived to the destination then transport layer uses Automatic Repeat Request (ARR) schemes to retransmit the lost or corrupted data.</li> <br>
+                <li>A group of bit is called Checksum is added to each segment by the transport layer to find out received corrupted segment.</li> <br>
+            
+            </ol>
+            <li>protocols of Trnasport Layer are: TCP (Trnasmission control protocol: 100% gauranteed transmission of data)
+                <br>
+                or UDP (User Datagram Protocol.)                
+            </li> <br>
+            <li>Transport layer performs two types of services:</li> <br>
+            <ol>
+                <li>Connection oriented transmission (TCP)</li> <br>
+                <li>Connectionless transmission (UDP)</li> <br>
+            </ol>
+            <li>UDP is faster than TCP because it does not provide any feedback. for e.g. (Bittorrent)</li> <br>
+            <li>where as TCP provides a feedback, therefore, lost data can be retransmitted in the TCP. e.g. (WWW, FTP, Email)</li> <br>
+        </ol>
+        <ol>
+            <h1>Network Layer:</h1>
+            <li>Network layer receives data segments from the Transport Layer and transfers the data segments to one computer to another computer located in different networks.</li> <br>
+            <li>Data units used in the network layer is called Packets.</li> <br>
+            <li>It is the layer where routers reside.</li> <br>
+            <li>The function of Network layers are:
+                <ol>
+                    <li>Logical Addressing.</li> <br>
+                    <li>Routing</li> <br>
+                    <li>Path Determination.</li> <br>
+                </ol>
+                <ol>
+                <li>Logical Addressing.</li> <br>    
+                <li>IP addressing done in Network layer is called Logical Addressing (IPv4 and IPv6).</li> <br>
+                <li>Every computer in a network has a unique IP address.</li> <br>
+                <li>Network layer assignes IP address to sender's and receiver's each segment to form an Packet </li> <br>
+                <li>IP address is assigned ensures that each data packets can reach the correct destination.</li> <br>
+                </ol>
+                <ol>
+                    <li>Routing:</li> <br>
+                    <li>It's a method of moving data packets from source to destination. It is based on the logical address format of IPv4 or IPv6.</li> <br>
+                    <li>IPv4 and IPv6 + Mask.</li> <br>
+                </ol>
+                <ol>
+                    <li>Path Determination:</li> <br>
+                    <li>A computer can connected to the internet server in a number of ways.</li> <br>
+                    <li>By choosing the best possible path for data delivery from source to destination is called path determination.</li> <br>
+                    <li>it uses following protocols to determine best possible path for data delivery such as:</li> <br>
+                    <ol>
+                        <li>OSPF (Open shortest path first)</li> <br>
+                        <li>BGP (Border Gateway Protocol)</li> <br>
+                        <li>IS-IS (intermmediate system to intermmediate system.)</li> <br>                        
+                    </ol>
+                </ol>
+            </li> <br>
+        </ol>
+        <ol>
+            <h1>Data Link Layer:</h1>
+            <li>Data link layer receives the packets from the Network layer.</li> <br>
+            <li>Data packets contains the IP address of the sender and receiver.</li> <br>
+            <li>There are two kinds of addressing:
+                <ol>
+                    <li> Logical Addressing: Done at Network Layer. </li> <br>
+                    <li> Physical Addressing: Done at Data Link Layer:
+                         Where MAC address of sender and receiver are assigned to each data segment of the packet to form a frame.
+                         <br> MAC address is alphanumeric 12 digit number.
+                         <br> NIC (network interface cards are used in data link layer which is nothing but the embedded software.)
+                         <br> NIC is used to transfer the data from one computer to another computer by local media
+                         such as coaxial wire, optical fiber or radio signal(AIR).
+                    </li> <br>
+                    <li>Data Link layer performs two basic functions:</li> <br>
+                    <ol>
+                        <li>It allows the upper layer to access the media using techniques such as framing.
+                            <br> It controls how data is placed and controls the media using techniques such as:
+                            Media Access Contol and Error Detection.
+                        </li> <br>                        
+                    </ol>
+                </ol>
+            </ol>
+           </li> <br>
+           <ol>
+            <h1>Physical Layer:</h1>
+            <ol>
+                <li>Data from application layer has been segmented by Trnasport Layer.<br>
+                    Placed into packets by Network Layer. <br>
+                    Framed by data link layer. which is a sequence of binary 0's and 1's. 
+                    <br>
+                    Physical layer converts this Binary Sequence into Signals and trnasmit it over
+                    Local Media. It can be a electrical signal in case of LAN cable or copper cable.
+                    <br> Or Light signal in case of optical fiber
+                    <br> or Radio signal in case of AIR.
+                    <br> Signal generated by Physical layer depends on the type of media used.
+                    <br> Finally the data is send to the Application layer from Physical layer to the receiver's device.
+                </li> <br>
+            </ol>
+       </ol>
+    </ol>
+    <h1>Summary:</h1> <br>
+    <img src="/img/OSI_model_info_cn.jpg" alt="OSImodelinfo" height="850" width="1200">
+</body>
+</html>

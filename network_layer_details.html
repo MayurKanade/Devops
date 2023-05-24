@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/home/Devops.css">
+    <title>Network layer in detail.</title>
+</head>
+<body>
+    <h1>Network Layer:</h1>
+    <ol>
+        <li>Here we work with Routes (using routers)</li> <br>
+        <li>hop-by-hop routing: sends the packets until it's reach to the destination.</li> <br>
+        <li>hopping routers to routers until it's reaches to correct router.</li> <br>
+        <li>Routing table is a data structure (every single route has a routing table.)</li> <br>
+        <img src="/img/routing_cn.JPG" alt="routing" height="150" width="350">
+        <li>Network layer consist control plane: which is responsible for creating routing table or addition of a new router.</li> <br>
+        <li>IPV4 - 32 bits, 4-words</li> <br>
+        <li>IPV6 - 128 bits</li> <br>
+        <li>Route hopping find out through Interne service providers.</li> <br>
+        <li>whenever router routes the packet, it should know subnet of the destination.</li> <br>
+        <li>Internet Society has created a Classes for this. (a class system)</li> <br>
+        <li>There are 5 types of IP Addresses</li> <br>
+        class A
+        class B
+        class C
+        class D
+        class E            
+        <table border="1">
+            <th>class</th>
+            <th>range</th>
+            <th>range upto</th>
+            <tr>
+                <td>A</td>
+                <td>0.0.0.0</td>
+                <td>127.255.255.255</td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td>128.0.0.0</td>
+                <td>191.255.255.255</td>
+            </tr>
+            <tr>
+                <td>C</td>
+                <td>192.0.0.0</td>
+                <td>223.255.255.255</td>
+            </tr>
+            <tr>
+                <td>D</td>
+                <td>224.0.0.0</td>
+                <td>239.255.255.255</td>
+            </tr>
+            <tr>
+                <td>E</td>
+                <td>240.0.0.0</td>
+                <td>255.255.255.255</td>
+            </tr>
+        </table>
+
+    </ol>
+    <h2>Subnet Masking</h2>
+    <ol>
+        <li>Subnet Mask for class C is 255.255.0.0  last two bytes changeable by user.</li> <br>
+        <li>192.0.1.0/24 (the meaning of this is remaining 32-24=8bits. 24bits used by subnetmask out of 32) 8 bits are 0 to 255.</li> <br>
+        <li>who allocates the subnetmask? : <br> the ISP allows the subnetmasking. <br> class A will be allocated on First come first serve basis.</li> <br>
+        <li>The most probably the IP addresses are assigned based on the regions.</li> <br>
+        <li>reserved addresses: 127.0.0.1 known as ==> Localhost/Loopback addresses, here machine is act like both as a client and server.</li> <br>
+        <li>packet header is of 20 bytes: it contains: IP version;length;identification;flags;checksum;addresses;TTL (Time to leave) etc.</li> <br>
+        <img src="/img/ping_cn.JPG" alt="ping" height="250" width="850">
+        <li>IPV4=32 bits=2<sup>32</sup>=4.3 billion</li> <br>
+        <li>IPV6 is 4 times larger than IPV4. i.e 2<sup>32*4</sup>=3.4*10<sup>38</sup>numbers.</li> <br>
+        <li>cons of IPV6 is that, it is not backward compatible and entire world till not yet moved on IPV6. </li> <br>
+    </ol>
+    <h2>MiddleBoxes</h2>
+    <ol>
+        <li>Firewall: Global Internet and your trusted network.</li> <br>
+        <li>It filter outs the IP addresses based on various rules.</li> <br>
+        <li>Functions of firewall:
+            <ol type="a">
+                <li>it blocks the specific IP address.</li> <br>
+                <li>it modifies the packets.</li> <br>
+                <li>it set some rules to port numbers</li> <br>
+                <li>it set some flags in header of the IP</li> <br>
+                <li>it has it's own protocol</li> <br>
+        </ol>
+    </li> <br>
+    <li>NAT (Network Address Trnaslator): Network address translation is a method of mapping an IP address space into another by modifying network address information in the IP header of packets while they are in transit across a traffic routing device.</li> <br>
+    <img src="/img/nat_cn.jpg" alt="NAT" height="300" width="800">
+   </ol>
+   <ol>
+    <li>Data Link Layer:
+        It uses DHCP (Dynamic Host Configuration protocol.)
+    </li> <br>
+    <li>Every computer when connects to the internet must have data link layer address.</li> <br>
+    <li>Sometimes it may occur, the data link layer addresses may connected via automatically created data link layer addresses.</li> <br>
+    <li>Data Link Addresses also known as MAC addresses.</li> <br>
+    <li>It's not related to device it's related to the network. The router will assign the MAC address to the device. <br>
+    This way machines will communicate with each other.</li> <br>
+    <li>In data link layer the router will attach to the correct IP address to the data packets ensuring that they got to the computer and device because all the Private IP addresses corresponds to correct IP address.</li> <br>
+   </ol>
+</body>
+</html>

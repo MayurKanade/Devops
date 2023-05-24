@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/home/Devops.css">
+    <title>Transport Layer in Detail.</title>
+</head>
+<body>
+    <h1>Transport Layer:</h1>
+    <ol>
+        <li>Transport layer lies inside the devices.</li> <br>
+        <li>It takes the information from the network layer and transfer it to the application.</li> <br>
+        <li>Transport layer will attach socket port numbers. (That's why it knows the application sends the data and where it goes.)</li> <br>
+        <li>Trnasport layer takes care of congestion control.</li> <br>
+        <li>congestion control algorithms are built in TCP protocol.</li> <br>
+        <li>Transport layer protocol takes care about checksum.</li> <br>
+        <li>Checksum is a number and it will maintain a sequence of data in between sender and receiver.</li> <br>
+        <li>Data health is checked by checksum and it also checks for data corruption.</li> <br>
+        <li>Timers are used in transport layer to send the data on time with acknowledgement.</li> <br>
+        <img src="/img/timers_cn.JPG" alt="timersexplained" height="350" width="800">
+    </ol>
+    <h1>UDP (User Datagram Protocol)</h1>
+    <ol>
+        <li>Data may or may not be delivered.</li> <br>
+        <li>Data may modified on the way.</li> <br>
+        <li>Data may not be in the order.</li> <br>
+        <li>It is connection less protocol.</li> <br>
+        <li>There is no connection established while data is sent over the network.</li> <br>
+        <li>UDP uses checksum whether data is corrupted or not but does not take any action. It sends the packet even through data is corrupted.</li> <br>
+        <li>UDP Packet.</li> <br>
+        <li>Total size 2 <sup>16-8</sup>=65,000 bytes. for 1 packet.</li> <br>
+        <img src="/img/udp_cn.JPG" alt="udp_packet" height="350" width="550">
+    </ol>
+    <h2>Use cases of UDP:</h2>
+    <ol type="i">
+        <li>It's very fast.</li> <br>
+        <li>Video conferencing applications.</li> <br>
+        <li>DNS also uses UDP. (because it's fast)</li> <br>
+        <li>Gaming.</li> <br>
+        <li>$ sudo tcpdump -c 5  : only 5 packets will come.</li> <br>
+    </ol>
+    <br>
+    <h1>TCP (Transmission Control Protocol):</h1>
+    <ol>
+        <li>Application layer sends lots of raw data. TCP segments this data in chunks, add header, it may also connect the data from network layer.</li> <br>
+        <li>Congestion control.</li> <br>
+        <li>Takes care of:
+            <ol>
+                <li>when data does not arrived. (acknowledgement)</li> <br>
+                <li>Maintains the order of data (using sequence number) </li> <br>            
+            </ol>        
+        </li> <br>
+        <li>Features:
+            <ol>
+                <li>Connection oriented.</li> <br>
+                <li>Error control.</li> <br>
+                <li>Congestion control.</li> <br>
+                <li>Bi-Directional (full-duplex)</li> <br>
+            </ol>
+        </li> <br>
+        <img src="/img/threewayhandshake_cn.jpg" alt="3-way-handshake" height="350" width="800">
+    </ol>  
+    <ol>
+        <h1>Note:</h1>
+        <ol>
+            <li>Transport layer data is transferred into segments.</li> <br>
+            <li>Network layer data is transferred into packets.</li> <br>
+            <li>DataLink layer data is transferred into frames.</li> <br>
+        </ol>
+    </ol>  
+</body>
+</html>
