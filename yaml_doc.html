@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/home/Devops.css">
+    <link rel="stylesheet" href="Devops.css">
     <title>YAML Documentation</title>
 </head>
 <body>
@@ -16,9 +16,9 @@
         <li>It is similar to XML and JSON.</li>
         <li>In YAML you can store only data and not commands. It is known as serialization of data.</li>
         <li>Serialization: a process of converting a data objects (into a complex data structure into a stream of bytes) into a stream of storage on physical device.</li>
-        <img src="/img/serialization_cn.JPG" alt="serialization_image" height="350" width="900"><br><caption>Data Serialization.</caption>
+        <img src="serialization_cn.JPG" alt="serialization_image" height="350" width="900"><br><caption>Data Serialization.</caption>
         <br>
-        <img src="/img/stream_of_bytes_cn.JPG" alt="serialization_process" height="350" width="900"><br><caption>Process of Serialization.</caption>
+        <img src="stream_of_bytes_cn.JPG" alt="serialization_process" height="350" width="900"><br><caption>Process of Serialization.</caption>
         <li>Data Serialization Languages: YAML,XML and JSON.</li>
         <li>Use: <ol><li>configuration files for Docker and Kubernetes.</li> <li>Logs,Cache.</li></ol></li>
         <li>Benefits of YAML:
@@ -33,7 +33,7 @@
                 <li>It represents list structures also <br>#lists<br>-apple <br>-mango <br>-banana</li>
                 <li>YAML is case sensitive.</li>
                 <li>YAML can use block-type structure.</li>
-                <img src="/img/block_structure_cn.JPG" alt="blockstructinyaml" height="350" width="900"><br><caption>Block Structure in YAML.</caption>
+                <img src="block_structure_cn.JPG" alt="blockstructinyaml" height="350" width="900"><br><caption>Block Structure in YAML.</caption>
                 <li>Spaces are very important in YAML.</li>
                 <li>YAML file ended with triple dots (...) i.e document is ended here.</li>
                 <li>You can objects into another format like:
@@ -114,7 +114,7 @@
         <br><br>
         <li>#Dictionary: !!omap The entire Sequence represented as values.</li>
         e.g.: <br> people: !!omap <br> Mayur: <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: Mayur Kanade <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;age: 78 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: !!float 5.3 <br> Rahul: <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: Rahul Parkhi <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;age: 80 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: !!float 5.8 <br>
-        <img src="/img/dictionayomap_cn.JPG" alt="dictionary_img" height="350" width="900">   
+        <img src="dictionayomap_cn.JPG" alt="dictionary_img" height="350" width="900">   
         <br><caption>Dictionary Datatype.</caption> <br><br>
         <li>Anchors: Re-using some properties again and again.</li>
         likings: &likes <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fav-fruit: mango <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dislikings: grapes <br> person1: <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: kunal <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<< *likes <br>person2: <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: rahul <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<< *likes <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; disliking: berries &nbsp;&nbsp; # here, overrides grapes to berries. <br> person3: <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: apoorv <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<< *likes <br> person4: <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name:Yash <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<< *
@@ -124,16 +124,16 @@
     <h2>Representation of files for the following Architecture:</h2>
     <br>
     <br>
-    <img src="/img/school_arch_cn.JPG" alt="school_architecture" height="350" width="900">
+    <img src="school_arch_cn.JPG" alt="school_architecture" height="350" width="900">
     <ol>
         <li>Representation in XML Format</li> <br>
-        <img src="/img/schools_xml_format_cn.JPG" alt="schools_xml_format">
+        <img src="schools_xml_format_cn.JPG" alt="schools_xml_format">
         <br>
         <li>Representation in JSON Format</li> <br>
-        <img src="/img/schools_json_format_cn.JPG" alt="school_json_format">
+        <img src="schools_json_format_cn.JPG" alt="school_json_format">
         <br>
         <li>Representation in YAML format</li>
-        <img src="/img/schools_yaml_format_cn.JPG" alt="school_yaml_format">
+        <img src="schools_yaml_format_cn.JPG" alt="school_yaml_format">
     </ol>
 
 </body>
