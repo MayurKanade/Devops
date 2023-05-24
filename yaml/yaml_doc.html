@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/home/Devops.css">
+    <title>YAML Documentation</title>
+</head>
+<body>
+    <h1>YAML files in Devops.</h1>
+    <br>
+    <ol>
+        <li>YAML : YAML ain't markup language.</li>
+        <li>It's not a programming language. It's just a data format used to exchange data.</li>
+        <li>It is similar to XML and JSON.</li>
+        <li>In YAML you can store only data and not commands. It is known as serialization of data.</li>
+        <li>Serialization: a process of converting a data objects (into a complex data structure into a stream of bytes) into a stream of storage on physical device.</li>
+        <img src="/img/serialization_cn.JPG" alt="serialization_image" height="350" width="900"><br><caption>Data Serialization.</caption>
+        <br>
+        <img src="/img/stream_of_bytes_cn.JPG" alt="serialization_process" height="350" width="900"><br><caption>Process of Serialization.</caption>
+        <li>Data Serialization Languages: YAML,XML and JSON.</li>
+        <li>Use: <ol><li>configuration files for Docker and Kubernetes.</li> <li>Logs,Cache.</li></ol></li>
+        <li>Benefits of YAML:
+            <ol type="i">
+                <li>Human Readable and Simple.</li>
+                <li>It has strict syntax- Indentation is important.</li>
+                <li>Easily convertible to JSON or XML</li>
+                <li>Most programming Languages use it.</li>
+                <li>More powerful when representing a complex data.</li>
+                <li>Parsing is easy. (Parsing means reading a data.)</li>
+                <li>YAML always present in key-value pairs.</li>
+                <li>It represents list structures also <br>#lists<br>-apple <br>-mango <br>-banana</li>
+                <li>YAML is case sensitive.</li>
+                <li>YAML can use block-type structure.</li>
+                <img src="/img/block_structure_cn.JPG" alt="blockstructinyaml" height="350" width="900"><br><caption>Block Structure in YAML.</caption>
+                <li>Spaces are very important in YAML.</li>
+                <li>YAML file ended with triple dots (...) i.e document is ended here.</li>
+                <li>You can objects into another format like:
+                    <ol>
+                        <li>cities: [pune,gujrat] ===> this is called serial flow.</li>
+                        <li>{mango: "yellow fruit", age:56} ===> key-value pairs.</li>
+                    </ol>                    
+                </li>
+                <li>we can put 3 dots (...) in between two or more seprate data.</li>
+                <li>YAML does not provide multi-line comment.</li>
+                <li>How many ways we can represent string in YAML?
+                    <ol>
+                        <li>myself: mayur kanade</li>
+                        <li>fruit: "apple"</li>
+                        <li>job: 'Software-Engineer'</li>
+                    </ol> 
+                </li>
+                <li>How to consider object for multiple lines? <br> e.g.: bio | <br>hey my name is mayur kanade <br>I am very good.</li>
+                <li>How to write single line into multiple lines? <br>message > <br>this would be consider <br>as a single line.</li>
+            </ol>
+        </li>
+    </ol>
+    <h2>YAML datatypes: </h2>
+    <br>
+    <ol>
+        <li>String Variables:</li>
+        name: mayur kanade <br>fruit: "apple" <br>job: 'Software-Engineer' <br> bio | <br> hey this is your friend <br> you'll definitely love me online.        
+    </ol>
+    <h2>how to specify the datatypes for data in YAML?</h2>
+    <ol>
+        <li>integer</li>
+        zero: !!int 0 <br> positiveNum: !!int 45 <br> negativeNum: !!int -45 <br> binaryNum: !!int ob1011 <br> octalNum: !!int 06754 <br> hexNum: !!int 0*45 <br>commaValue: !!int +54_000 # as 54,000 will be displayed.
+        <br>
+        <li>floating point numbers</li>
+        marks: !!float 58.89 <br> infinite: !!float .inf <br> not a num: .nan
+        <br>
+        <li>boolean value</li>
+        booleanValue: !!boolean No 
+        <br>
+        <li>String as a type</li>
+        name: !!string "Best Luck!"
+        <br>
+        <li>Null datatype</li>
+        surname: !!Null Null  # or null NULL
+        <br>
+        ~: this is a null key 
+        <br>
+        <li>dates and times</li>
+        date: !!times 2023-05-24 # if time is not specified then default is UTC.
+        <br>
+    </ol>
+    <h2>Advanced Data Types in YAML.</h2>
+    <ol>
+        <li>Sequence Datatype</li>
+        student: !!seq <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-marks <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-roll_no <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-name 
+        <br>
+        <li>Sparse Sequence</li>
+        sparse seq: <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-hey <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-how <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-NULL <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-sap
+        <br>
+        <li>Nested Sequence</li>
+        - <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-apple <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-mango <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-grapes <br> - <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-marks <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-roll_no <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-name
+        <br> <br>
+        <li>key-value pair is called as maps. We use !!map datatype <br>nested mappings: a map within a map. </li>
+        <br>
+        !!map <br> name: mayur kanade <br> role: <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; age:36 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; job:'SDE-II'
+        <br> 
+        <br>
+        # alternative to above or same for above is 
+        <br>
+        <br>
+        !!map <br> name: mayur kanade <br> role: {age:56, job:'SDE-II'}
+        <br><br>
+        <li>Pairs datatype: keys may have a duplicate values. <br># !!pairs <br># this will be an array of hashtables. </li>
+        !!pairs <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-job: student <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-job: Teacher <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-job: SDE-II
+        <br><br>  #same as:  !!pairs [job: Student, job: Teacher, job: SDE-II] <br><br>
+        <li>Set datatype: !!set will allow you to have unique values, there is no key-value pair (only items.) There is no duplicate.</li>
+        names: !!set <br> ? mayur <br> ? yogesh <br> ? yash <br> ? deven
+        <br><br>
+        <li>#Dictionary: !!omap The entire Sequence represented as values.</li>
+        e.g.: <br> people: !!omap <br> Mayur: <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: Mayur Kanade <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;age: 78 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: !!float 5.3 <br> Rahul: <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: Rahul Parkhi <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;age: 80 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: !!float 5.8 <br>
+        <img src="/img/dictionayomap_cn.JPG" alt="dictionary_img" height="350" width="900">   
+        <br><caption>Dictionary Datatype.</caption> <br><br>
+        <li>Anchors: Re-using some properties again and again.</li>
+        likings: &likes <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fav-fruit: mango <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dislikings: grapes <br> person1: <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: kunal <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<< *likes <br>person2: <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: rahul <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<< *likes <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; disliking: berries &nbsp;&nbsp; # here, overrides grapes to berries. <br> person3: <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: apoorv <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<< *likes <br> person4: <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name:Yash <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<< *
+        <br>
+        <br>        
+    </ol>
+    <h2>Representation of files for the following Architecture:</h2>
+    <br>
+    <br>
+    <img src="/img/school_arch_cn.JPG" alt="school_architecture" height="350" width="900">
+    <ol>
+        <li>Representation in XML Format</li> <br>
+        <img src="/img/schools_xml_format_cn.JPG" alt="schools_xml_format">
+        <br>
+        <li>Representation in JSON Format</li> <br>
+        <img src="/img/schools_json_format_cn.JPG" alt="school_json_format">
+        <br>
+        <li>Representation in YAML format</li>
+        <img src="/img/schools_yaml_format_cn.JPG" alt="school_yaml_format">
+    </ol>
+
+</body>
+</html>

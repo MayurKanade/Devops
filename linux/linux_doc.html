@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/home/Devops.css">
+    <title>Linux Learning</title>
+</head>
+<body>
+    <h1>Linux for Devops.</h1>
+    <ol>
+        <li>Terminal: Use of Linux OS in graphical manner.</li> <br>
+        <li>Shell: Shell in Linux basically a command line interface that will take all coammnds from user. <br> it interprets those commands and tells the computer what to do.</li> <br>
+        <li>$ where python 3 <br> /usr/local/bin/python3 (the executable path for the application  is displayed.)</li> <br>
+        <li>$ open /usr/local/bin <br>It will open the respective directory/folder as mentioned in the path.</li> <br>
+        <li>$ where git <br> output: /usr/bin/git</li> <br>
+        <li>what is an environment variable? <br> The environment variable are dynamic values that are stored within a system and used by applications launched in shells or subshells.</li> <br>
+        <li>echo $path <br> it will display all the environment variables stored path to linked with directory. (Standard libraries defined for the executables.)</li> <br>
+        <li>~ cd .zshrc [~ means home] <br> shell all configurations mentioned here [all env variables defined here]</li> <br>
+        <li>cat /etc/zshrc <br> [all env varaibles will be shown.] All the aliases are stored here.</li> <br>
+        <li>At the time of shell open all the objects mentioned in the bashrc will be displayed.</li> <br>
+        <li>$ cat /etc/zpnafile/ <br> system-wide profile for interactive zsh(1) login shells.</li> <br>
+        <li>$ vi ~/.zpnofile <br> set your javafile path here. <br> PATH="/Java JDK path upto bin/"</li> <br>
+        <li>Apple by default uses .zshfile</li> <br>        
+    </ol>
+    <h2>Commands for Linux:</h2>
+    <ol type="I">
+        <li>pwd (present working directory)</li> <br>
+        <li>ls -a (to list out hidden files and folders too.)</li> <br>
+        <li>ls -r (recursively looking into the folders)</li> <br>
+        <li>cat (to display file content)</li> <br>
+        <li>$ cat hello.txt > total.txt <br>it will save the hello.txt file content into the total.txt file</li> <br>
+        <li>$ cat file.txt hello.txt > total.txt <br>it will combine result and stored it into the output file (Here merging will happend.)</li> <br>
+        <li>$ man '<any specific linux command>' <br> it will show the information about the linux command. </li> <br>
+        <li>$ cat file.txt | tr a-z A-Z > upper.txt <br>it will convert small characters into capital letters and stored it into the upper.txt file.</li> <br>   
+        <li>$ cat file.txt \ <br> you can add all writing in the next line.</li> <br>
+        <li>Create a directory between two directories using command: <br> mkdir -p randon/middle/hello</li> <br>
+        <li>touch test/house.txt <br> it will create a new file into the mentioned folder path test.</li> <br>
+        <li>$ cp file1.txt copy-file1.txt <br>this will create a copy of the file.</li> <br>
+        <li>$ mv file1.txt file_old.txt <br>it will rename the file1.txt to file_old.txt</li> <br>
+        <li>$ rm file.txt <br>the file will be deleted.</li> <br>
+        <li>$ df -m <br>it will show how much disk is free in MB format.</li> <br>
+        <li>$ df -hg <br>it will show the disk free in human readable and in gigabytes format.</li> <br>
+        <li>$ du -h <br> it will print disk usage for file structure in human readable format.</li> <br>
+        <li>$ head total.txt <br>it will display all rows</li> <br>
+        <li>$ head -n 4 total.txt <br>it will display only first 4 lines or rows from total.txt</li> <br>
+        <li>$ tail -n 2 total.txt <br>it will display last two lines from total.txt file.</li> <br>
+        <li>$ diff file1.txt file2.txt <br>it will compare two files line by line.</li> <br>
+        <li># locate command is used to find the files. If file is available then whole path will be shown.</li> <br>        
+    </ol>
+    <br>
+    <h2>Find command in Linux.</h2>
+    <ol>
+     <li>Find command is used to find files in the linux.</li> <br>
+     <li>$ find -name "name of the file" <br>it will find the file inside the current directory by default.</li> <br>
+     <li>$ find . -type d <br>it will show all the directories in the current folder.</li> <br>
+     <li>$ find . -type f <br>it will show all the files in the current folder.</li> <br>
+     <li>$ find / -type f -name "name_of_the_file" <br>it will find the file from entire folder structures.</li> <br>
+     <li>$ find / -type f -iname "name_of_the_file" <br>the case sensitivity will be removed.</li> <br>
+     <li>$ find . -type f -mmin -20 <br>it will show the files which has been modified before 20 mins.</li> <br>
+     <li>Files modified more than 15 minutes ago. <br> ==> $ find . -type f -mmin +15</li> <br>
+     <li>Find files which are modified less than 10 days ago. <br>==> $ find . type f -mtime -10</li> <br>
+     <li>Find the files who has size more than 1GB <br>===> $ find . size +1G (for GB use G, for MB use M and for KB use K).</li> <br>
+     <li>Find the files in current directory which are empty. <br>===> $ find . -empty</li> <br>
+     <li>Find all the files which have permissions 777 <br>===> $ find . -perm 777</li> <br>    
+    </ol>
+    <h2>permissions in Linux</h2>
+    <ol>
+        <li>chmod command is used to give a permission in linux to the file or directory.</li> <br>
+        <li>chmod u=rwx,g=rwx,o=rwx apple.txt</li> <br>
+        <li>The above command will give read,write and execute permission to user,group and others for the apple.txt file</li> <br>
+        <li>There is an another format for the same as follows:
+            <ol>
+                <li>4==Read permission</li> <br>
+                <li>2==Write permission</li> <br>
+                <li>1==Execute permission</li> <br>
+                <li>0==No permission</li> <br>
+            </ol> 
+        </li> <br>
+        <li>chmod 777 upper.txt</li> <br>
+        <li>here addition of permission numbers will be assigned to user,group and others. (i.e read,write and execute using 4+2+1)</li> <br>
+        <li>whoami ==> a person who is logged in shows the information about it.</li> <br>
+        <li>How to change the owner of the file or directory?</li> <br>
+        <li>==> sudo chown root upper.txt</li> <br>
+        <li>without sudo if you type $ cat uppert.txt (#the error will be shown as permission denied. Only root user access this file.)</li> <br>
+    </ol>
+    <h2>GREP command in linux.</h2>
+    <ol>
+    <li>what if you want to search a particular string from the file? ==> use grep command.</li> <br>
+    <li>grep command is case-sensitive by default.</li> <br>
+    <li>$ grep -v ==> checks the version of file.</li> <br>
+    <li>syntax: $ grep "search_text" file_name.txt </li> <br>
+    <li>e.g: $ grep "Mayur" names.txt</li> <br>
+    <li>How to check for the complete word from the file? <br>==> $ grep -w "Mayur" names.txt <br>output==> Mayur Kanade.</li> <br>
+    <li>How to remove the case-sensitivity for grep command? <br> $ grep -i "Mayur" names.txt <br>The case-sensitivity will be removed for the searching word or pattern.</li> <br>
+    <li>$ grep -i n "Mayur" names.txt <br>output will be ==> 1:Mayur (1 is Line Number.)</li> <br>
+    <li>how to print 3 lines before searching word? <br>$ grep -B 3 "Mayur" names.txt. (this will print 3 lines before word Mayur).</li> <br>
+    <li>how to search a word in the entire directory of all .txt files? <br> $ grep -win "Mayur" ./*.txt </li> <br>
+    <li>how many times a search-word appeared and how many files consist name "Mayur"? <br> $ grep -wirc "Mayur" . <br>output will be like ===> ./random/ds_store:0 <br> ./randorm/names.txt:1 <br> ./random/hello/companies.txt:0 </li> <br>
+    <li>how to find history of all commands? <br> $ history | grep "ls" ===> it will show history of ls command that how many times ls is executed. </li> <br>
+    <li>grep -p (Regex expression)</li> <br>
+    <li>grep -p "\w" comapnies.txt ==> all words from companies.txt will be shown.</li> <br>
+    <li>grep -p "\d{3}-\d{3}-\d{4}" companies.txt ===> find the phone number from companies.txt</li> <br>
+    <li>if you want to run process for a particular id then just put ! before pid and press enter. <br> for e.g. 2747 cat phone.txt ==> just put ! 2747 ==> it will execute cat phone.txt again.</li> <br>
+    <li>ctrl +r ==> search for a previous commands.</li> <br>
+    <li>To execute multiple commands at a time then put a semi-colon in between commands like e.g. <br> git add .; git commit -m "message"; git push origin main</li> <br>    
+</ol>
+<h2>Some Important Stuff.</h2>
+<ol>
+    <li>sort -n command will return the result in numerical orders.</li> <br>
+    <li>jobs : command will show the process running by the shell.</li> <br>
+    <li>You can download the files from internet using wget command: <br> $ brew install wget or $ yum install wget or $sudo apt-get install wget <br> wget -o myfile.pdf "destination_URL"</li> <br>
+    <li>top: command will show the processes running and CPU usage.</li> <br>
+    <li>uname: command will show the which kernel it is and information about the operating system.</li> <br>
+    <li>e.g: uanme -o ===> GNU/Linux <br> uname -m ===> architecture <br> uname -r ===> kernel info and version.</li> <br>
+    <li>zip command to zip the files.  <br> syntax: $ zip files.zip   e.g.: $ zip companies.txt </li> <br>
+    <li>$ hostname -i ==> shows the ip address</li> <br>
+    <li>how to add the new user in linux? <br> $ useradd user_name <br> $ passwd user_name : it will ask for new password: and retype password: (you put your password here two times.) </li> <br>
+    <li>how to delete the user? ==> $ userdel user_name  e.g.: $ userdel mayur </li> <br>
+    <li>$ cat /etc/os-release <br>==> all the infor about OS will be displayed.</li> <br>
+    <li>$ lscpu : all the details regarding the cpu will be shown.</li> <br>
+    <li>$ free -h: human readable memory space available on system</li> <br>
+    <li>$ vmstat -n : virtual memory available</li> <br>
+    <li>$ id => will display your own id , for groups ==> id -g or id -G</li> <br>
+    <li>user exist or not will be shown with id using ==> $ getent group user_name</li> <br>
+    <li>$ id user_name ===> will show user_id, group_id and groups.</li> <br>
+    <li>$lsof ===> it will show all the openfiles list.</li> <br>
+    <li>$lsof -u mayur.kanade ===> it will show all the files opened by the usre mayurkanade</li> <br>
+</ol>
+<h2>Networking Commands:</h2>
+<ol>
+    <li>$ nslookup google.com <br> it will show information about <ol><li>server</li> <br><li>address</li> <br><li>name</li> <br></ol></li> <br>
+    <li>$ netstat ==> will show all the active ports.</li> <br>
+    <li>$ cut -c 1-2 companies.txt (it will cut the file into 2 columns.)</li> <br>
+    <li>$ htop (Resources all command and the memory will be shown).</li> <br>
+    <li>$ ps aux ==> process ids and info.</li> <br>
+    <li>&& operator ==> creates the process in the background therefore, other process will execute simultaneously. <br> for e.g.: ping google.com & ping yahoo.com</li> <br>
+    <li>$ kill process_id ==> it will kill the process.</li> <br>
+    <li>$ echo "first" && echo "second" (only when first command executed then and then only next command will execute.)</li> <br>
+    <li>$ echo "first" || echo "second" (only execute second command if first command fails.)</li> <br>
+    <li>$ rm -rf !(surname.txt) ==> remove all the files except surname.txt file.</li> <br>
+    <li>$ echo "hey" >> names.txt ===> it will append hey word into the file at last. <br> "hey" > name.txt will only override all the content and if you put >> symbol then it will append the word at last. </li> <br>
+    <li>$ echo "hey" && {echo "hi"; echo "I'm good"} ==> if fist command success then it will move for the next block of commands for the execution. <br> output will be: hey <br> hi <br>I'm good.</li> <br>
+</ol>
+
+</body>
+</html>
