@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/home/Devops.css">
+    <title>Computer Networks Basics</title>
+</head>
+<body>
+    <ol>
+        <li>Definition of computer: Commonly Oriented Machine use for training,education and research.</li> <br>
+        <li>Network: Computers connected together is called Network.</li> <br>
+        <li>Internet: Collection of Computer Networks.</li> <br>
+        <li>ARPA: Advanced Project Research Agency.</li> <br>
+        <li><img src="/img/MIT_cn.jpg" alt="first_internect_connection_test" height="350" width="350"><figcaption>First Internet Connection Established by ARPA in the above USA buildings.</figcaption></li> <br>
+        <li>The Internet Society sets up all the rules regarding Network Protocols.
+            <br> <a href="https://www.internetsociety.org/" target="_blank">Internet Society.</a>
+        </li> <br>
+        <li>Protocols: Protocols are rules that has been defined by Internet Society for the communication purpose.</li> <br>
+        <li>TCP (Transmission Control Protocol): 100% gauranteed transfer of data to the destination.</li> <br>
+        <li> <img src="/img/ip_address_cn.jpg" alt="ip_address_details" height="350" width="350" ><figcaption>IPv4 IP Address.</figcaption> </li> <br>
+        <li>ISP: Internet Service Provider is a company that provides individuals and organizations access to the internet and other related services. (e.g.: Comcast, Google fiber,Airtel etc.)</li> <br>
+        <li>How to find ISP server of your network? <br> use following command: <br> $ curl ifconfig.me -s <br> OR visit website <a href="https://www.whatismyisp.com/" target="_blank">whatismyisp</a>
+        <li>How ISP works? <br> <img src="/img/ISP_cn.jpg" alt="ISP details" height="350" width="550"><figcaption>ISP Server.</figcaption><br>Here modem/router decides who had the request (which device had the request) using NAT (Network Access Translator.)</li> <br>    
+        <li>How it define, which application requested a data? <br> Using port numbers applications requests differ in a request. <br> (for e.g. Postgres has 5432 default port.) therefore, IP Address identifies computer and port will be identifying the application. </li> <br>
+        <li>Ports are always 16 bit numbers. (i.e 16 cells can contain eitehr 0 or 1) <br> Total 2<sup>16</sup>=65,000 port numbers are available.</li> <br>
+        <li>0-1023 ==> Reserve ports [for HTTP] <br> 1024-49152 ==> Registered for some specific applications. <br> Remaining you can use. <br> Default port for HTTP=80,MongoDB=27017 and SQL=1433 </li> <br>
+        <li>1 mbps = 1 mega bits per seconds (bits 0 or 1) 1000000 bits/sec.</li> <br>
+        <li>1 gbps = 10 <sup>9</sup> bits/sec.</li> <br>
+        <li>1 kbps = 1000 bits/sec </li> <br>
+        <li>sending data=upload speed</li> <br>
+        <li>Downloading data= download speed</li> <br>
+        <li>All world is connected through internet using fiber optical cables. <br> submarinecable.com </li> <br>
+        <li>Tier1 ISP in India ==> TATA group.</li> <br>
+        <li>Tier2 ISPs are like Airtel,Hathway etc.</li> <br>
+        <li>LAN: Local Area Network = Small office/ house area connected via Ethernets or WiFi</li> <br>
+        <li>MAN: Metropolitian Area Network: Across the cities.</li> <br>
+        <li>WAN: Wide Area Network: Across the countries. [using optical fiber, SONET or FRAME Relay</li> <br>
+        <li>Modem: Modem is used to convert digital signals into analog signals and a vice versa.</li> <br>
+        <li>Router: Router is a device that routes the data packets based on their IP addresses.</li> <br>
+        <br> <h2> Bus Topology </h2>
+        <li><img src="/img/bus-topology_cn.jpg" alt="bus_topology_img" height="150" width="350"><figcaption>A type of network topology in which all devices in the network are connected by one central RJ-45 network cable or coaxial cable. <br>advantage: Works efficiently for small networks <br> disadvantage: If the cable is damaged, the entire network will fail or be split.</figcaption></li> <br>
+        <br> <h2> Ring Topology </h2>
+        <li><img src="/img/ring-topology_cn.jpg" alt="ring_topology_img" height="150" width="350"><figcaption>A type of network topology in which each device is connected to two other devices on either side via an RJ-45 cable or coaxial cable. <br>advantage: Since data flows in one direction, the chance of a packet collision is reduced. <br>All data travelling over the network must pass through each device on its way to its destination, which can reduce performance. </figcaption></li> <br>
+        <br> <h2> Star Topology </h2>
+        <li><img src="/img/star-topology_cn.jpg" alt="startopology_img" height="150" width="350"><figcaption>A type of network topology in which every device in the network is individually connected to a central node, known as the switch or hub. <br>advantage: Limits the impact of a single point of failure because each device is isolated by its relationship to the switch. <br>disadvantage: Requires more cabling and is more expensive than some alternatives. </figcaption></li> <br>
+        <br> <h2> Tree Topology </h2>
+        <li><img src="/img/tree-topology.jpg" alt="tree-topology-img" height="150" width="350"><figcaption>A combination of bus and star toplogy. <br>advantage: It can support a large number of nodes. <br>disadvantage: It can be difficult to troubleshoot issues in a tree topology as each node is connected to multiple other nodes. This can make it hard to identify where the issue is located.</figcaption></li> <br>
+        <br> <h2> Mesh Topology </h2> 
+        <li><img src="/img/mesh-topology.jpg" alt="mesh-topology-img" height="150" width="350"><figcaption>A type of network topology in which all devices in the network are interconnected. <br>advantage: Multiple devices can transmit data at the same time, allowing for high amounts of traffic. <br>disadvantage: Network installation and maintenance is time and resource intensive.</figcaption></li> <br>
+
+    </ol>
+</body>
+</html>

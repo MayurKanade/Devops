@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/home/Devops.css">
+    <title>Application Layer In Detail.</title>
+</head>
+<body>
+    <h1>Application Layer:</h1>
+    <ol type="i">
+        <li>The users interact with each other. e.g. social media.</li> <br>
+        <li>It lies on your devices inside the application.</li> <br>
+        <li>Various protocols are used.</li> <br>
+        <li>It mostly uses client-server architecture.</li> <br>
+    </ol>
+    <ul>
+        <li>Collection of servers known as Data Centers.</li> <br>
+        <li>High upload speed.</li> <br>
+        <li>Client-Server architecture:</li> <br><br>
+        <img src="/img/Client-server-model.jpg" alt="client-server_arch" height="350" width="350">
+        <li>Peer to Peer architecture:</li> <br>
+        <ol type="i">
+            <li>There is no dedicated server. i.e. Decentralized network.</li> <br>
+            <li>You can scale it very rapidly.</li> <br>
+            <li>for e.g.: BitTorrent</li> <br>
+            <img src="/img/PeertoPeer_cn" alt="peertopeer" height="350" width="350">
+        </ol>        
+    </ul>
+    <ol>
+        <h1>Application Layer Protocols.</h1><br>
+        <li>HTTP Protocol: </li> <br>
+        <ol type="a">
+            <li>It's a client-server protocol.</li> <br>
+            <li>HTTP uses TCP (Transmission Control Protocol) inside.</li> <br>
+            <li>HTTP does not store a state. (it's a stateless protocol.)</li> <br>
+        </ol> <br>
+        HTTP Methods:
+        <ol type="i">
+            <li>GET: Requesting Data.</li> <br>
+            <li>POST: Client sends something to the server. (for e.g.: web_forms,username or password).</li> <br>
+            <li>PUT: Puts data in a specific location.</li> <br>
+            <li>DELETE: Deletes data from the server.</li> <br>
+        </ol> 
+        Status Code:
+        <ol type="i">
+            <li>200: Request was successful.</li> <br>
+            <li>404: A Bad Request (couldn't find anything on the server.)</li> <br>
+            <li>500: Internal Server Error.</li> <br>
+        </ol>
+        Range:
+        <ol type="i">
+          <li>(100) 1 x x => Information Category Codes.</li> <br>
+          <li>(200) 2 x x => Success Codes.</li> <br>
+          <li>(300) 3 x x => Re-direction purpose.</li> <br>
+          <li>(400) 4 x x => Client side Error.</li> <br>
+          <li>(500) 5 x x => Server side Error.</li> <br>
+        </ol> <br>
+        <li>Stateless: If you visit a website more than once or again and again. It will not maintain the state that last time where were you.</li> <br>
+        <li>Cookie: Cookie is a unique string. It is stored on the client's browser. It is a file stored in my browser.</li> <br>
+        <li>3rd party cookies: 3rd party cookies set for URL's where client do not visit.</li> <br>
+    </ol> <br>
+    <h2>How email works?:</h2>
+    <ol>
+        <li>using SMTP (Simple mail transfer protocol): for sending mails.</li> <br>
+        <li>using POP (Post Office protocol): for Receiving mails.</li> <br>
+        <img src="/img/email-works_cn.jpg" alt="email_works_how" height="350" width="500">        
+    </ol>
+    <li>IMAP protocoal: Internet Message Access Protocol: It allows to view your emails on multiple devices.</li> <br>
+    <li>DNS (Domain Name System): It's a directory database.</li> <br>
+    <img src="/img/url_cn.jpg" alt="domain_info" height="350" width="500">
+    <li>who's maintaining Root DNS Servres? or Top Level Domain? <br>
+        ==> root-servers.org </li> <br>
+    <li>Top level domains stored by ICANN (Responsible for all domains, All TLD registered here.)</li> <br>    
+    <img src="/img/dns_cn.jpg" alt="dns_info" height="350" width="500">
+    <li>What happened when you type www.google.com in the browser?</li> <br>
+    <img src="/img/internet_req_works_cn.jpg" alt="internet_works" height="350" width="500">
+    <li>dig command: dig command is DNS lookup utility. (Domain Information Gropper) <br> dig google.com</li> <br>
+    <img src="/img/dig_cmd_cn.JPG" alt="dig_command" height="350" width="500">
+</body>
+</html>
